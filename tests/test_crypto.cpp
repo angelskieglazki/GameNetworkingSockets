@@ -11,7 +11,7 @@
 
 // I copied these tests from the Steam branch.
 // A little compatibility glue so I don't have to make any changes to them.
-#define CHECK(x) do { bool _check_result; Assert( (_check_result = (x)) != false ); g_failed |= !_check_result; } while(0)
+#define CHECK(x) do { bool _check_result; Assert( (_check_result = (x)) != false ); g_failed |= !_check_result; printf("%s %d\n", #x, g_failed ? 1 : 0); } while(0)
 #define CHECK_EQUAL(a,b) do { bool _check_eq_result; Assert( (_check_eq_result = ((a)==(b))) != false ); g_failed |= !_check_eq_result; } while(0)
 #define RETURNIFNOT(x) { if ( !(x) ) { AssertMsg( false, #x ); return; } }
 #define RETURNFALSEIFNOT(x) { if ( !(x) ) { AssertMsg( false, #x ); return false; } }
